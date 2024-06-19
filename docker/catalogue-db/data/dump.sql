@@ -1,9 +1,3 @@
-CREATE USER IF NOT EXISTS 'catalogue_user' IDENTIFIED BY 'default_password';
-CREATE USER IF NOT EXISTS 'catalogue_user'@'%' IDENTIFIED BY 'default_password';
-
-GRANT ALL ON socksdb.* TO 'catalogue_user';
-GRANT ALL ON socksdb.* TO 'catalogue_user'@'%';
-
 CREATE TABLE IF NOT EXISTS sock (
 	sock_id varchar(40) NOT NULL,
 	name varchar(20),
@@ -30,15 +24,15 @@ CREATE TABLE IF NOT EXISTS sock_tag (
 		REFERENCES tag(tag_id)
 );
 
-INSERT INTO sock VALUES ("a0a4f044-b040-410d-8ead-4de0446aec7e", "iphone X", "The premimum most and luxurious phone from the Apple stable. This is the most coveted one...", 7.99, 115, "/catalogue/images/iphone-x-01.jpeg", "/catalogue/images/iphone-x-01.jpeg");
-INSERT INTO sock VALUES ("808a2de1-1aaa-4c25-a9b9-6612e8f29a38", "Moto G5s Plus", "The latest mobile from Motorola",  17.32, 738, "/catalogue/images/moto-g5s-plus-01.png", "/catalogue/images/moto-g5s-plus-02.jpeg");
-INSERT INTO sock VALUES ("510a0d7e-8e83-4193-b483-e27e09ddc34d", "Google Pixel", "Best camera phone from Google.",  15.00, 820, "/catalogue/images/google-pixel-2.png", "/catalogue/images/google-pixel-2.png");
-INSERT INTO sock VALUES ("03fef6ac-1896-4ce8-bd69-b798f85c6e0b", "Moto G3", "A Classic favourite from Motorola.",  99.99, 1, "/catalogue/images/moto-g3-01.jpeg", "/catalogue/images/moto-g3-02.JPG");
-INSERT INTO sock VALUES ("d3588630-ad8e-49df-bbd7-3167f7efb246", "Moto G5", "Moto G5 is a popular mobile from Motorola.",  10.99, 801, "/catalogue/images/moto-g5.jpg", "/catalogue/images/moto-g5.jpg");
-INSERT INTO sock VALUES ("819e1fbf-8b7e-4f6d-811f-693534916a8b", "Xiomi A1", "enim officia aliqua excepteur esse deserunt quis aliquip nostrud anim",  14, 808, "/catalogue/images/mi-a1-1.jpg", "/catalogue/images/mi-a1-1.jpg");
-INSERT INTO sock VALUES ("zzz4f044-b040-410d-8ead-4de0446aec7e", "Galaxy S8", "Keep it simple.",  12, 127, "/catalogue/images/samsung-galaxy-s8.jpg", "/catalogue/images/samsung-galaxy-s8.jpg");
-INSERT INTO sock VALUES ("3395a43e-2d88-40de-b95f-e00e1502085b", "Galaxy S6", "proident occaecat irure et excepteur labore minim nisi amet irure",  18, 438, "/catalogue/images/s6edge.jpg", "/catalogue/images/s6edge.jpg");
-INSERT INTO sock VALUES ("837ab141-399e-4c1f-9abc-bace40296bac", "Redmi Note4", "consequat amet cupidatat minim laborum tempor elit ex consequat in",  15, 175, "/catalogue/images/redmi-note4-01.jpg", "/catalogue/images/redmi-note4-02.JPG");
+INSERT INTO sock VALUES ("a0a4f044-b040-410d-8ead-4de0446aec7e", "iphone 15", "The premimum most and luxurious phone from the Apple stable. This is the most coveted one...", 7.99, 115, "/catalogue/images/iphone-x-01.jpeg", "/catalogue/images/iphone-x-01.jpeg");
+INSERT INTO sock VALUES ("808a2de1-1aaa-4c25-a9b9-6612e8f29a38", "iPhone 15 Pro", "The latest mobile from Motorola",  17.32, 738, "/catalogue/images/moto-g5s-plus-01.png", "/catalogue/images/moto-g5s-plus-02.jpeg");
+INSERT INTO sock VALUES ("510a0d7e-8e83-4193-b483-e27e09ddc34d", "Google Pixel 8 Pro", "Best camera phone from Google.",  15.00, 820, "/catalogue/images/google-pixel-2.png", "/catalogue/images/google-pixel-2.png");
+INSERT INTO sock VALUES ("03fef6ac-1896-4ce8-bd69-b798f85c6e0b", "Motorola Razr 40", "A Classic favourite from Motorola.",  99.99, 1, "/catalogue/images/moto-g3-01.jpeg", "/catalogue/images/moto-g3-02.JPG");
+INSERT INTO sock VALUES ("d3588630-ad8e-49df-bbd7-3167f7efb246", "Samsung Galaxy A15", "Moto G5 is a popular mobile from Motorola.",  10.99, 801, "/catalogue/images/moto-g5.jpg", "/catalogue/images/moto-g5.jpg");
+INSERT INTO sock VALUES ("819e1fbf-8b7e-4f6d-811f-693534916a8b", "Samsung Galaxy S24+", "enim officia aliqua excepteur esse deserunt quis aliquip nostrud anim",  14, 808, "/catalogue/images/mi-a1-1.jpg", "/catalogue/images/mi-a1-1.jpg");
+INSERT INTO sock VALUES ("zzz4f044-b040-410d-8ead-4de0446aec7e", "Galaxy S24 Ultra", "Keep it simple.",  12, 127, "/catalogue/images/samsung-galaxy-s8.jpg", "/catalogue/images/samsung-galaxy-s8.jpg");
+INSERT INTO sock VALUES ("3395a43e-2d88-40de-b95f-e00e1502085b", "OnePlus 12", "proident occaecat irure et excepteur labore minim nisi amet irure",  18, 438, "/catalogue/images/s6edge.jpg", "/catalogue/images/s6edge.jpg");
+INSERT INTO sock VALUES ("837ab141-399e-4c1f-9abc-bace40296bac", "Xiomi 14 Ultra", "consequat amet cupidatat minim laborum tempor elit ex consequat in",  15, 175, "/catalogue/images/redmi-note4-01.jpg", "/catalogue/images/redmi-note4-02.JPG");
 
 INSERT INTO tag (name) VALUES ("4G Volte");
 INSERT INTO tag (name) VALUES ("Dual Camera");
