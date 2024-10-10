@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS sock (
 	sock_id varchar(40) NOT NULL,
-	name varchar(20),
+	name varchar(50),
 	description varchar(200),
 	price float,
 	count int,
@@ -24,48 +24,50 @@ CREATE TABLE IF NOT EXISTS sock_tag (
 		REFERENCES tag(tag_id)
 );
 
-INSERT INTO sock VALUES ("a0a4f044-b040-410d-8ead-4de0446aec7e", "iphone 15", "The premimum most and luxurious phone from the Apple stable. This is the most coveted one...", 7.99, 115, "/catalogue/images/iphone-x-01.jpeg", "/catalogue/images/iphone-x-01.jpeg");
-INSERT INTO sock VALUES ("808a2de1-1aaa-4c25-a9b9-6612e8f29a38", "iPhone 15 Pro", "The latest mobile from Motorola",  17.32, 738, "/catalogue/images/moto-g5s-plus-01.png", "/catalogue/images/moto-g5s-plus-02.jpeg");
-INSERT INTO sock VALUES ("510a0d7e-8e83-4193-b483-e27e09ddc34d", "Google Pixel 8 Pro", "Best camera phone from Google.",  15.00, 820, "/catalogue/images/google-pixel-2.png", "/catalogue/images/google-pixel-2.png");
-INSERT INTO sock VALUES ("03fef6ac-1896-4ce8-bd69-b798f85c6e0b", "Motorola Razr 40", "A Classic favourite from Motorola.",  99.99, 1, "/catalogue/images/moto-g3-01.jpeg", "/catalogue/images/moto-g3-02.JPG");
-INSERT INTO sock VALUES ("d3588630-ad8e-49df-bbd7-3167f7efb246", "Samsung Galaxy A15", "Moto G5 is a popular mobile from Motorola.",  10.99, 801, "/catalogue/images/moto-g5.jpg", "/catalogue/images/moto-g5.jpg");
-INSERT INTO sock VALUES ("819e1fbf-8b7e-4f6d-811f-693534916a8b", "Samsung Galaxy S24+", "enim officia aliqua excepteur esse deserunt quis aliquip nostrud anim",  14, 808, "/catalogue/images/mi-a1-1.jpg", "/catalogue/images/mi-a1-1.jpg");
-INSERT INTO sock VALUES ("zzz4f044-b040-410d-8ead-4de0446aec7e", "Galaxy S24 Ultra", "Keep it simple.",  12, 127, "/catalogue/images/samsung-galaxy-s8.jpg", "/catalogue/images/samsung-galaxy-s8.jpg");
-INSERT INTO sock VALUES ("3395a43e-2d88-40de-b95f-e00e1502085b", "OnePlus 12", "proident occaecat irure et excepteur labore minim nisi amet irure",  18, 438, "/catalogue/images/s6edge.jpg", "/catalogue/images/s6edge.jpg");
-INSERT INTO sock VALUES ("837ab141-399e-4c1f-9abc-bace40296bac", "Xiomi 14 Ultra", "consequat amet cupidatat minim laborum tempor elit ex consequat in",  15, 175, "/catalogue/images/redmi-note4-01.jpg", "/catalogue/images/redmi-note4-02.JPG");
+-- Updated phone entries with realistic pricing
+INSERT INTO sock VALUES ("a1b2c3d4-e5f6-7890-abcd-1234567890ab", "iPhone 16 Pro Max", "The latest premium iPhone from Apple with top-tier performance and features.", 1299.00, 200, "/catalogue/images/iphone-16-pro-max.jpg", "/catalogue/images/iphone-16-pro-max-2.jpg");
+INSERT INTO sock VALUES ("b2c3d4e5-f6a7-8901-bcde-234567890abc", "Google Pixel 8 Pro", "Google's flagship phone with the best camera and AI features.", 999.00, 150, "/catalogue/images/google-pixel-8-pro.jpg", "/catalogue/images/google-pixel-8-pro-2.jpg");
+INSERT INTO sock VALUES ("c3d4e5f6-a7b8-9012-cdef-345678901abc", "Samsung Galaxy S24 Ultra", "The ultimate Samsung phone with a powerful camera setup and top specs.", 1199.00, 180, "/catalogue/images/samsung-galaxy-s24-ultra.jpg", "/catalogue/images/samsung-galaxy-s24-ultra-2.jpg");
+INSERT INTO sock VALUES ("d4e5f6a7-b8c9-0123-def0-456789012abc", "OnePlus 12 Pro", "High-performance phone from OnePlus with fast charging and great display.", 799.00, 220, "/catalogue/images/oneplus-12-pro.jpg", "/catalogue/images/oneplus-12-pro-2.jpg");
+INSERT INTO sock VALUES ("e5f6a7b8-c9d0-1234-ef01-567890123abc", "Xiaomi 14 Ultra", "Xiaomi's latest flagship with cutting-edge technology and features.", 849.00, 300, "/catalogue/images/xiaomi-14-ultra.jpg", "/catalogue/images/xiaomi-14-ultra-2.jpg");
+INSERT INTO sock VALUES ("f6a7b8c9-d0e1-2345-f012-678901234abc", "Motorola Edge 40 Pro", "Motorola's flagship phone with a sleek design and excellent performance.", 699.00, 250, "/catalogue/images/motorola-edge-40-pro.jpg", "/catalogue/images/motorola-edge-40-pro-2.jpg");
+INSERT INTO sock VALUES ("a7b8c9d0-e1f2-3456-0123-789012345abc", "Sony Xperia 1 VI", "Sony's high-end phone for photography and media enthusiasts.", 1099.00, 100, "/catalogue/images/sony-xperia-1-vi.jpg", "/catalogue/images/sony-xperia-1-vi-2.jpg");
+INSERT INTO sock VALUES ("b8c9d0e1-f2a3-4567-1234-890123456abc", "Oppo Find X6 Pro", "Flagship phone from Oppo with stunning design and top-notch specs.", 899.00, 180, "/catalogue/images/oppo-find-x6-pro.jpg", "/catalogue/images/oppo-find-x6-pro-2.jpg");
+INSERT INTO sock VALUES ("c9d0e1f2-a3b4-5678-2345-901234567abc", "Vivo X90 Pro+", "Vivo's ultimate camera-centric phone with high-end features.", 899.00, 200, "/catalogue/images/vivo-x90-pro-plus.jpg", "/catalogue/images/vivo-x90-pro-plus-2.jpg");
 
-INSERT INTO tag (name) VALUES ("4G Volte");
+-- Updated tags
+INSERT INTO tag (name) VALUES ("5G");
 INSERT INTO tag (name) VALUES ("Dual Camera");
-INSERT INTO tag (name) VALUES ("4GB RAM");
+INSERT INTO tag (name) VALUES ("6GB RAM");
 INSERT INTO tag (name) VALUES ("Black");
 INSERT INTO tag (name) VALUES ("Silver");
-INSERT INTO tag (name) VALUES ("White");
-INSERT INTO tag (name) VALUES ("Xiomi");
+INSERT INTO tag (name) VALUES ("Blue");
+INSERT INTO tag (name) VALUES ("Xiaomi");
 INSERT INTO tag (name) VALUES ("Motorola");
 INSERT INTO tag (name) VALUES ("Samsung");
 INSERT INTO tag (name) VALUES ("Apple");
 INSERT INTO tag (name) VALUES ("Google");
+INSERT INTO tag (name) VALUES ("OnePlus");
+INSERT INTO tag (name) VALUES ("Sony");
+INSERT INTO tag (name) VALUES ("Oppo");
+INSERT INTO tag (name) VALUES ("Vivo");
 
-INSERT INTO sock_tag VALUES ("a0a4f044-b040-410d-8ead-4de0446aec7e", "10");
-INSERT INTO sock_tag VALUES ("a0a4f044-b040-410d-8ead-4de0446aec7e", "5");
-INSERT INTO sock_tag VALUES ("808a2de1-1aaa-4c25-a9b9-6612e8f29a38", "8");
-INSERT INTO sock_tag VALUES ("808a2de1-1aaa-4c25-a9b9-6612e8f29a38", "4");
-INSERT INTO sock_tag VALUES ("808a2de1-1aaa-4c25-a9b9-6612e8f29a38", "1");
-INSERT INTO sock_tag VALUES ("808a2de1-1aaa-4c25-a9b9-6612e8f29a38", "3");
-INSERT INTO sock_tag VALUES ("510a0d7e-8e83-4193-b483-e27e09ddc34d", "11");
-INSERT INTO sock_tag VALUES ("510a0d7e-8e83-4193-b483-e27e09ddc34d", "2");
-INSERT INTO sock_tag VALUES ("510a0d7e-8e83-4193-b483-e27e09ddc34d", "3");
-INSERT INTO sock_tag VALUES ("03fef6ac-1896-4ce8-bd69-b798f85c6e0b", "8");
-INSERT INTO sock_tag VALUES ("03fef6ac-1896-4ce8-bd69-b798f85c6e0b", "4");
-INSERT INTO sock_tag VALUES ("d3588630-ad8e-49df-bbd7-3167f7efb246", "8");
-INSERT INTO sock_tag VALUES ("d3588630-ad8e-49df-bbd7-3167f7efb246", "2");
-INSERT INTO sock_tag VALUES ("819e1fbf-8b7e-4f6d-811f-693534916a8b", "7");
-INSERT INTO sock_tag VALUES ("819e1fbf-8b7e-4f6d-811f-693534916a8b", "3");
-INSERT INTO sock_tag VALUES ("819e1fbf-8b7e-4f6d-811f-693534916a8b", "4");
-INSERT INTO sock_tag VALUES ("zzz4f044-b040-410d-8ead-4de0446aec7e", "9");
-INSERT INTO sock_tag VALUES ("zzz4f044-b040-410d-8ead-4de0446aec7e", "1");
-INSERT INTO sock_tag VALUES ("3395a43e-2d88-40de-b95f-e00e1502085b", "9");
-INSERT INTO sock_tag VALUES ("3395a43e-2d88-40de-b95f-e00e1502085b", "1");
-INSERT INTO sock_tag VALUES ("837ab141-399e-4c1f-9abc-bace40296bac", "7");
-INSERT INTO sock_tag VALUES ("837ab141-399e-4c1f-9abc-bace40296bac", "6");
-INSERT INTO sock_tag VALUES ("837ab141-399e-4c1f-9abc-bace40296bac", "3");
+-- Updated sock_tag associations
+INSERT INTO sock_tag VALUES ("a1b2c3d4-e5f6-7890-abcd-1234567890ab", "10");
+INSERT INTO sock_tag VALUES ("a1b2c3d4-e5f6-7890-abcd-1234567890ab", "5");
+INSERT INTO sock_tag VALUES ("b2c3d4e5-f6a7-8901-bcde-234567890abc", "11");
+INSERT INTO sock_tag VALUES ("b2c3d4e5-f6a7-8901-bcde-234567890abc", "2");
+INSERT INTO sock_tag VALUES ("c3d4e5f6-a7b8-9012-cdef-345678901abc", "9");
+INSERT INTO sock_tag VALUES ("c3d4e5f6-a7b8-9012-cdef-345678901abc", "3");
+INSERT INTO sock_tag VALUES ("d4e5f6a7-b8c9-0123-def0-456789012abc", "12");
+INSERT INTO sock_tag VALUES ("d4e5f6a7-b8c9-0123-def0-456789012abc", "4");
+INSERT INTO sock_tag VALUES ("e5f6a7b8-c9d0-1234-ef01-567890123abc", "7");
+INSERT INTO sock_tag VALUES ("e5f6a7b8-c9d0-1234-ef01-567890123abc", "6");
+INSERT INTO sock_tag VALUES ("f6a7b8c9-d0e1-2345-f012-678901234abc", "8");
+INSERT INTO sock_tag VALUES ("f6a7b8c9-d0e1-2345-f012-678901234abc", "3");
+INSERT INTO sock_tag VALUES ("a7b8c9d0-e1f2-3456-0123-789012345abc", "13");
+INSERT INTO sock_tag VALUES ("a7b8c9d0-e1f2-3456-0123-789012345abc", "2");
+INSERT INTO sock_tag VALUES ("b8c9d0e1-f2a3-4567-1234-890123456abc", "14");
+INSERT INTO sock_tag VALUES ("b8c9d0e1-f2a3-4567-1234-890123456abc", "5");
+INSERT INTO sock_tag VALUES ("c9d0e1f2-a3b4-5678-2345-901234567abc", "15");
+INSERT INTO sock_tag VALUES ("c9d0e1f2-a3b4-5678-2345-901234567abc", "6");

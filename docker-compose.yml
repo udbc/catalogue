@@ -14,7 +14,7 @@ services:
     environment:
       - reschedule=on-node-failure
     ports:
-      - "8080:80"
+      - "8081:8081"
 
   catalogue-db:
     build:
@@ -28,5 +28,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-my_default_password}  # Default value if not set
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_DATABASE=socksdb
+      - MYSQL_USER=catalogue_user 
+      - MYSQL_PASSWORD=default_password
     volumes:
       - ./docker/catalogue-db/data:/docker-entrypoint-initdb.d  # Mount the data directory for dump.sql
