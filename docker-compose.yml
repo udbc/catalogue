@@ -1,30 +1,32 @@
-version: '2'
-
 services:
-    catalogue:
-        build:
-            context: .
-            dockerfile: ./docker/catalogue/Dockerfile
-        image: weaveworksdemos/catalogue-dev
-        hostname: catalogue
-        restart: always
-        cap_drop:
-            - all
-        cap_add:
-            - NET_BIND_SERVICE
-        read_only: true
-        environment:
-            - reschedule=on-node-failure
-        ports:
-            - "8080:80"
-    catalogue-db:
-        build:
-            context: ./docker/catalogue-db/
-        image: weaveworksdemos/catalogue-dev-db
-        hostname: catalogue-db
-        restart: always
-        environment:
-            - reschedule=on-node-failure
-            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-            - MYSQL_ALLOW_EMPTY_PASSWORD=true
-            - MYSQL_DATABASE=socksdb
+  catalogue:
+    build:
+      context: .
+      dockerfile: ./docker/catalogue/Dockerfile
+    image: weaveworksdemos/catalogue-dev
+    hostname: catalogue
+    restart: always
+    cap_drop:
+      - all
+    cap_add:
+      - NET_BIND_SERVICE
+    read_only: true
+    environment:
+      - reschedule=on-node-failure
+    ports:
+      - "8080:80"
+
+  catalogue-db:
+    build:
+      context: ./docker/catalogue-db/
+      dockerfile: Dockerfile  # Optional if the file is named Dockerfile
+    image: weaveworksdemos/catalogue-dev-db
+    hostname: catalogue-db
+    restart: always
+    environment:
+      - reschedule=on-node-failure
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-my_default_password}  # Default value if not set
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=socksdb
+    volumes:
+      - ./docker/catalogue-db/data:/docker-entrypoint-initdb.d  # Mount the data directory for dump.sql
